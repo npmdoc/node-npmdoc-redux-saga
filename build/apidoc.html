@@ -1,0 +1,3182 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/redux-saga/redux-saga#readme"
+
+    >redux-saga (v0.14.7)</a>
+</h1>
+<h4>Saga middleware for Redux to handle Side Effects</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga">module redux-saga</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.channel">
+            function <span class="apidocSignatureSpan">redux-saga.</span>channel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.default">
+            function <span class="apidocSignatureSpan">redux-saga.</span>default
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.delay">
+            function <span class="apidocSignatureSpan">redux-saga.</span>delay
+            <span class="apidocSignatureSpan">(ms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.put">
+            function <span class="apidocSignatureSpan">redux-saga.</span>effects.put
+            <span class="apidocSignatureSpan">(channel, action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.take">
+            function <span class="apidocSignatureSpan">redux-saga.</span>effects.take
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.eventChannel">
+            function <span class="apidocSignatureSpan">redux-saga.</span>eventChannel
+            <span class="apidocSignatureSpan">(subscribe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.runSaga">
+            function <span class="apidocSignatureSpan">redux-saga.</span>runSaga
+            <span class="apidocSignatureSpan">(iterator, _ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.takeEvery">
+            function <span class="apidocSignatureSpan">redux-saga.</span>takeEvery
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.takeLatest">
+            function <span class="apidocSignatureSpan">redux-saga.</span>takeLatest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.throttle">
+            function <span class="apidocSignatureSpan">redux-saga.</span>throttle
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>END</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>buffers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>effects</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>utils.CHANNEL_END</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>utils.asEffect</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.</span>utils.is</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">redux-saga.</span>CANCEL</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.buffers">module redux-saga.buffers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.buffers.dropping">
+            function <span class="apidocSignatureSpan">redux-saga.buffers.</span>dropping
+            <span class="apidocSignatureSpan">(limit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.buffers.expanding">
+            function <span class="apidocSignatureSpan">redux-saga.buffers.</span>expanding
+            <span class="apidocSignatureSpan">(initialSize)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.buffers.fixed">
+            function <span class="apidocSignatureSpan">redux-saga.buffers.</span>fixed
+            <span class="apidocSignatureSpan">(limit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.buffers.none">
+            function <span class="apidocSignatureSpan">redux-saga.buffers.</span>none
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.buffers.sliding">
+            function <span class="apidocSignatureSpan">redux-saga.buffers.</span>sliding
+            <span class="apidocSignatureSpan">(limit)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.effects">module redux-saga.effects</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.actionChannel">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>actionChannel
+            <span class="apidocSignatureSpan">(pattern, buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.apply">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>apply
+            <span class="apidocSignatureSpan">(context, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.call">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>call
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.cancel">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>cancel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.cancelled">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>cancelled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.cps">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>cps
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.flush">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>flush
+            <span class="apidocSignatureSpan">(channel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.fork">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>fork
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.join">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>join
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.put">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>put
+            <span class="apidocSignatureSpan">(channel, action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.race">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>race
+            <span class="apidocSignatureSpan">(effects)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.select">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>select
+            <span class="apidocSignatureSpan">(selector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.spawn">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>spawn
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.take">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>take
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.takeEvery">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>takeEvery
+            <span class="apidocSignatureSpan">(patternOrChannel, worker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.takeLatest">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>takeLatest
+            <span class="apidocSignatureSpan">(patternOrChannel, worker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.takem">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>takem
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.throttle">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>throttle
+            <span class="apidocSignatureSpan">(ms, pattern, worker)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.effects.put">module redux-saga.effects.put</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.put.put">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>put
+            <span class="apidocSignatureSpan">(channel, action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.put.resolve">
+            function <span class="apidocSignatureSpan">redux-saga.effects.put.</span>resolve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.put.sync">
+            function <span class="apidocSignatureSpan">redux-saga.effects.put.</span>sync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.effects.take">module redux-saga.effects.take</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.take.take">
+            function <span class="apidocSignatureSpan">redux-saga.effects.</span>take
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.effects.take.maybe">
+            function <span class="apidocSignatureSpan">redux-saga.effects.take.</span>maybe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.utils">module redux-saga.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.arrayOfDeffered">
+            function <span class="apidocSignatureSpan">redux-saga.utils.</span>arrayOfDeffered
+            <span class="apidocSignatureSpan">(length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.createMockTask">
+            function <span class="apidocSignatureSpan">redux-saga.utils.</span>createMockTask
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.deferred">
+            function <span class="apidocSignatureSpan">redux-saga.utils.</span>deferred
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.noop">
+            function <span class="apidocSignatureSpan">redux-saga.utils.</span>noop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.utils.</span>CHANNEL_END</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.utils.</span>asEffect</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-saga.utils.</span>is</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">redux-saga.utils.</span>SAGA_ACTION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">redux-saga.utils.</span>TASK</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.utils.CHANNEL_END">module redux-saga.utils.CHANNEL_END</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.CHANNEL_END.toString">
+            function <span class="apidocSignatureSpan">redux-saga.utils.CHANNEL_END.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.utils.asEffect">module redux-saga.utils.asEffect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.actionChannel">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>actionChannel
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.call">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>call
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.cancel">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>cancel
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.cancelled">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>cancelled
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.cps">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>cps
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.flush">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>flush
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.fork">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>fork
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.join">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>join
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.put">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>put
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.race">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>race
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.select">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>select
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.asEffect.take">
+            function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>take
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-saga.utils.is">module redux-saga.utils.is</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.array">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>array
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.buffer">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>buffer
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.channel">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>channel
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.func">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>func
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.helper">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>helper
+            <span class="apidocSignatureSpan">(it)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.iterable">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>iterable
+            <span class="apidocSignatureSpan">(it)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.iterator">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>iterator
+            <span class="apidocSignatureSpan">(it)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.notUndef">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>notUndef
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.number">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>number
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.observable">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>observable
+            <span class="apidocSignatureSpan">(ob)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.pattern">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>pattern
+            <span class="apidocSignatureSpan">(pat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.promise">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>promise
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.stringableFunc">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>stringableFunc
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.task">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>task
+            <span class="apidocSignatureSpan">(t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-saga.utils.is.undef">
+            function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>undef
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga" id="apidoc.module.redux-saga">module redux-saga</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.channel" id="apidoc.element.redux-saga.channel">
+        function <span class="apidocSignatureSpan">redux-saga.</span>channel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function channel() {
+  var buffer = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : _buffers.buffers.fixed();
+
+  var closed = false;
+  var takers = [];
+
+  (0, _utils.check)(buffer, _utils.is.buffer, INVALID_BUFFER);
+
+  function checkForbiddenStates() {
+    if (closed &#x26;&#x26; takers.length) {
+      throw (0, _utils.internalErr)(&#x27;Cannot have a closed channel with pending takers&#x27;);
+    }
+    if (takers.length &#x26;&#x26; !buffer.isEmpty()) {
+      throw (0, _utils.internalErr)(&#x27;Cannot have pending takers with non empty buffer&#x27;);
+    }
+  }
+
+  function put(input) {
+    checkForbiddenStates();
+    (0, _utils.check)(input, _utils.is.notUndef, UNDEFINED_INPUT_ERROR);
+    if (closed) {
+      return;
+    }
+    if (!takers.length) {
+      return buffer.put(input);
+    }
+    for (var i = 0; i &#x3c; takers.length; i++) {
+      var cb = takers[i];
+      if (!cb[_utils.MATCH] || cb[_utils.MATCH](input)) {
+        takers.splice(i, 1);
+        return cb(input);
+      }
+    }
+  }
+
+  function take(cb) {
+    checkForbiddenStates();
+    (0, _utils.check)(cb, _utils.is.func, &#x27;channel.take\&#x27;s callback must be a function&#x27;);
+
+    if (closed &#x26;&#x26; buffer.isEmpty()) {
+      cb(END);
+    } else if (!buffer.isEmpty()) {
+      cb(buffer.take());
+    } else {
+      takers.push(cb);
+      cb.cancel = function () {
+        return (0, _utils.remove)(takers, cb);
+      };
+    }
+  }
+
+  function flush(cb) {
+    checkForbiddenStates(); // TODO: check if some new state should be forbidden now
+    (0, _utils.check)(cb, _utils.is.func, &#x27;channel.flush\&#x27; callback must be a function&#x27;);
+    if (closed &#x26;&#x26; buffer.isEmpty()) {
+      cb(END);
+      return;
+    }
+    cb(buffer.flush());
+  }
+
+  function close() {
+    checkForbiddenStates();
+    if (!closed) {
+      closed = true;
+      if (takers.length) {
+        var arr = takers;
+        takers = [];
+        for (var i = 0, len = arr.length; i &#x3c; len; i++) {
+          arr[i](END);
+        }
+      }
+    }
+  }
+
+  return { take: take, put: put, flush: flush, close: close,
+    get __takers__() {
+      return takers;
+    },
+    get __closed__() {
+      return closed;
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (arguments.length) {
+  check(arguments[0], is.notUndef, &#x27;take(patternOrChannel): patternOrChannel is undefined&#x27;);
+}
+if (is.pattern(patternOrChannel)) {
+  return effect(TAKE, { pattern: patternOrChannel });
+}
+if (is.<span class="apidocCodeKeywordSpan">channel</span>(patternOrChannel)) {
+  return effect(TAKE, { channel: patternOrChannel });
+}
+throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid
+ pattern&#x27;);
+}
+
+take.maybe = function () {
+var eff = take.apply(undefined, arguments);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.default" id="apidoc.element.redux-saga.default">
+        function <span class="apidocSignatureSpan">redux-saga.</span>default
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sagaMiddlewareFactory() {
+  var options = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : {};
+
+  var runSagaDynamically = void 0;
+  var sagaMonitor = options.sagaMonitor;
+
+  // monitors are expected to have a certain interface, let&#x27;s fill-in any missing ones
+
+  if (sagaMonitor) {
+    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _utils.noop;
+    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _utils.noop;
+    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _utils.noop;
+    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _utils.noop;
+    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _utils.noop;
+  }
+
+  if (_utils.is.func(options)) {
+    if (process.env.NODE_ENV === &#x27;production&#x27;) {
+      throw new Error(&#x27;Saga middleware no longer accept Generator functions. Use sagaMiddleware.run instead&#x27;);
+    } else {
+      throw new Error(&#x27;You passed a function to the Saga middleware. You are likely trying to start a        Saga by directly passing
+ it to the middleware. This is no longer possible starting from 0.10.0.        To run a Saga, you must do it dynamically AFTER mounting
+ the middleware into the store.\n        Example:\n          import createSagaMiddleware from \&#x27;redux-saga\&#x27;\n          ... other imports\n\n          const sagaMiddleware = createSagaMiddleware()\n          const store = createStore(reducer, applyMiddleware(sagaMiddleware))\n          sagaMiddleware.run(saga, ...args)\n      &#x27;);
+    }
+  }
+
+  if (options.logger &#x26;&#x26; !_utils.is.func(options.logger)) {
+    throw new Error(&#x27;`options.logger` passed to the Saga middleware is not a function!&#x27;);
+  }
+
+  if (options.onerror) {
+    if (_utils.isDev) (0, _utils.log)(&#x27;warn&#x27;, &#x27;`options.onerror` is deprecated. Use `options.onError` instead.&#x27;);
+    options.onError = options.onerror;
+    delete options.onerror;
+  }
+
+  if (options.onError &#x26;&#x26; !_utils.is.func(options.onError)) {
+    throw new Error(&#x27;`options.onError` passed to the Saga middleware is not a function!&#x27;);
+  }
+
+  if (options.emitter &#x26;&#x26; !_utils.is.func(options.emitter)) {
+    throw new Error(&#x27;`options.emitter` passed to the Saga middleware is not a function!&#x27;);
+  }
+
+  function sagaMiddleware(_ref) {
+    var getState = _ref.getState,
+        dispatch = _ref.dispatch;
+
+    runSagaDynamically = runSaga;
+    var sagaEmitter = (0, _channel.emitter)();
+    sagaEmitter.emit = (options.emitter || _utils.ident)(sagaEmitter.emit);
+    var sagaDispatch = (0, _utils.wrapSagaDispatch)(dispatch);
+
+    function runSaga(saga, args, sagaId) {
+      return (0, _proc2.default)(saga.apply(undefined, _toConsumableArray(args)), sagaEmitter.subscribe, sagaDispatch, getState,
+options, sagaId, saga.name);
+    }
+
+    return function (next) {
+      return function (action) {
+        if (sagaMonitor) {
+          sagaMonitor.actionDispatched(action);
+        }
+        var result = next(action); // hit reducers
+        sagaEmitter.emit(action);
+        return result;
+      };
+    };
+  }
+
+  sagaMiddleware.run = function (saga) {
+    for (var _len = arguments.length, args = Array(_len &#x3e; 1 ? _len - 1 : 0), _key = 1; _key &#x3c; _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    (0, _utils.check)(runSagaDynamically, _utils.is.notUndef, &#x27;Before running a Saga, you must mount the Saga middleware on the
+Store using applyMiddleware&#x27;);
+    (0, _utils.check)(saga, _utils.is.func, &#x27;sagaMiddleware.run(saga, ...args): saga argument must be a Generator function!&#x27;);
+
+    var effectId = (0, _utils.uid)();
+    if (sagaMonitor) {
+      sagaMonitor.effectTriggered({ effectId: effectId, root: true, parentEffectId: 0, effect: { root: true, saga: saga, args: args
+ } });
+    }
+    var task = runSagaDynamically(saga, args, effectId);
+    if (sagaMonitor) {
+      sagaMonitor.effectResolved(effectId, task);
+    }
+    return task;
+  };
+
+  return sagaMiddleware;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.delay" id="apidoc.element.redux-saga.delay">
+        function <span class="apidocSignatureSpan">redux-saga.</span>delay
+        <span class="apidocSignatureSpan">(ms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function delay(ms) {
+  var val = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : true;
+
+  var timeoutId = void 0;
+  var promise = new Promise(function (resolve) {
+    timeoutId = setTimeout(function () {
+      return resolve(val);
+    }, ms);
+  });
+
+  promise[CANCEL] = function () {
+    return clearTimeout(timeoutId);
+  };
+
+  return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.put" id="apidoc.element.redux-saga.effects.put">
+        function <span class="apidocSignatureSpan">redux-saga.</span>effects.put
+        <span class="apidocSignatureSpan">(channel, action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function put(channel, action) {
+  if (arguments.length &#x3e; 1) {
+    (0, _utils.check)(channel, _utils.is.notUndef, &#x27;put(channel, action): argument channel is undefined&#x27;);
+    (0, _utils.check)(channel, _utils.is.channel, &#x27;put(channel, action): argument &#x27; + channel + &#x27; is not a valid channel&#x27;);
+    (0, _utils.check)(action, _utils.is.notUndef, &#x27;put(channel, action): argument action is undefined&#x27;);
+  } else {
+    (0, _utils.check)(channel, _utils.is.notUndef, &#x27;put(action): argument action is undefined&#x27;);
+    action = channel;
+    channel = null;
+  }
+  return effect(PUT, { channel: channel, action: action });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.take" id="apidoc.element.redux-saga.effects.take">
+        function <span class="apidocSignatureSpan">redux-saga.</span>effects.take
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function take() {
+  var patternOrChannel = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : &#x27;*&#x27;;
+
+  if (arguments.length) {
+    (0, _utils.check)(arguments[0], _utils.is.notUndef, &#x27;take(patternOrChannel): patternOrChannel is undefined&#x27;);
+  }
+  if (_utils.is.pattern(patternOrChannel)) {
+    return effect(TAKE, { pattern: patternOrChannel });
+  }
+  if (_utils.is.channel(patternOrChannel)) {
+    return effect(TAKE, { channel: patternOrChannel });
+  }
+  throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid pattern&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.eventChannel" id="apidoc.element.redux-saga.eventChannel">
+        function <span class="apidocSignatureSpan">redux-saga.</span>eventChannel
+        <span class="apidocSignatureSpan">(subscribe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function eventChannel(subscribe) {
+  var buffer = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : _buffers.buffers.none();
+  var matcher = arguments[2];
+
+<span class="apidocCodeCommentSpan">  /**
+    should be if(typeof matcher !== undefined) instead?
+    see PR #273 for a background discussion
+  **/
+</span>  if (arguments.length &#x3e; 2) {
+    (0, _utils.check)(matcher, _utils.is.func, &#x27;Invalid match function passed to eventChannel&#x27;);
+  }
+
+  var chan = channel(buffer);
+  var unsubscribe = subscribe(function (input) {
+    if (isEnd(input)) {
+      chan.close();
+      return;
+    }
+    if (matcher &#x26;&#x26; !matcher(input)) {
+      return;
+    }
+    chan.put(input);
+  });
+
+  if (!_utils.is.func(unsubscribe)) {
+    throw new Error(&#x27;in eventChannel: subscribe should return a function to unsubscribe&#x27;);
+  }
+
+  return {
+    take: chan.take,
+    flush: chan.flush,
+    close: function close() {
+      if (!chan.__closed__) {
+        chan.close();
+        unsubscribe();
+      }
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.runSaga" id="apidoc.element.redux-saga.runSaga">
+        function <span class="apidocSignatureSpan">redux-saga.</span>runSaga
+        <span class="apidocSignatureSpan">(iterator, _ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runSaga(iterator, _ref) {
+  var subscribe = _ref.subscribe,
+      dispatch = _ref.dispatch,
+      getState = _ref.getState,
+      sagaMonitor = _ref.sagaMonitor,
+      logger = _ref.logger,
+      onError = _ref.onError;
+
+
+  (0, _utils.check)(iterator, _utils.is.iterator, &#x22;runSaga must be called on an iterator&#x22;);
+
+  var effectId = (0, _utils.uid)();
+  if (sagaMonitor) {
+    sagaMonitor.effectTriggered({ effectId: effectId, root: true, parentEffectId: 0, effect: { root: true, saga: iterator, args: [] } });
+  }
+  var task = (0, _proc2.default)(iterator, subscribe, (0, _utils.wrapSagaDispatch)(dispatch), getState, { sagaMonitor: sagaMonitor
+, logger: logger, onError: onError }, effectId, iterator.name);
+
+  if (sagaMonitor) {
+    sagaMonitor.effectResolved(effectId, task);
+  }
+
+  return task;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.takeEvery" id="apidoc.element.redux-saga.takeEvery">
+        function <span class="apidocSignatureSpan">redux-saga.</span>takeEvery
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">takeEvery = function () {
+  if (isDev) log(&#x27;warn&#x27;, deprecationWarning);
+  return fn.apply(undefined, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.takeLatest" id="apidoc.element.redux-saga.takeLatest">
+        function <span class="apidocSignatureSpan">redux-saga.</span>takeLatest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">takeLatest = function () {
+  if (isDev) log(&#x27;warn&#x27;, deprecationWarning);
+  return fn.apply(undefined, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.throttle" id="apidoc.element.redux-saga.throttle">
+        function <span class="apidocSignatureSpan">redux-saga.</span>throttle
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">throttle = function () {
+  if (isDev) log(&#x27;warn&#x27;, deprecationWarning);
+  return fn.apply(undefined, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.buffers" id="apidoc.module.redux-saga.buffers">module redux-saga.buffers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.buffers.dropping" id="apidoc.element.redux-saga.buffers.dropping">
+        function <span class="apidocSignatureSpan">redux-saga.buffers.</span>dropping
+        <span class="apidocSignatureSpan">(limit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dropping(limit) {
+  return ringBuffer(limit, ON_OVERFLOW_DROP);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.buffers.expanding" id="apidoc.element.redux-saga.buffers.expanding">
+        function <span class="apidocSignatureSpan">redux-saga.buffers.</span>expanding
+        <span class="apidocSignatureSpan">(initialSize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function expanding(initialSize) {
+  return ringBuffer(initialSize, ON_OVERFLOW_EXPAND);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.buffers.fixed" id="apidoc.element.redux-saga.buffers.fixed">
+        function <span class="apidocSignatureSpan">redux-saga.buffers.</span>fixed
+        <span class="apidocSignatureSpan">(limit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fixed(limit) {
+  return ringBuffer(limit, ON_OVERFLOW_THROW);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+export var UNDEFINED_INPUT_ERROR = &#x27;Saga was provided with an undefined action&#x27;;
+
+if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+UNDEFINED_INPUT_ERROR += &#x27;\nHints:\n    - check that your Action Creator returns a non-undefined value\n    - if the Saga was
+ started using runSaga, check that your subscribe source provides the action to its listeners\n  &#x27;;
+}
+
+export function channel() {
+var buffer = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : buffers.<span class="apidocCodeKeywordSpan
+">fixed</span>();
+
+var closed = false;
+var takers = [];
+
+check(buffer, is.buffer, INVALID_BUFFER);
+
+function checkForbiddenStates() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.buffers.none" id="apidoc.element.redux-saga.buffers.none">
+        function <span class="apidocSignatureSpan">redux-saga.buffers.</span>none
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function none() {
+  return zeroBuffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  get __closed__() {
+    return closed;
+  }
+};
+}
+
+export function eventChannel(subscribe) {
+var buffer = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : buffers.<span class="apidocCodeKeywordSpan
+">none</span>();
+var matcher = arguments[2];
+
+/**
+  should be if(typeof matcher !== undefined) instead?
+  see PR #273 for a background discussion
+**/
+if (arguments.length &#x3e; 2) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.buffers.sliding" id="apidoc.element.redux-saga.buffers.sliding">
+        function <span class="apidocSignatureSpan">redux-saga.buffers.</span>sliding
+        <span class="apidocSignatureSpan">(limit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sliding(limit) {
+  return ringBuffer(limit, ON_OVERFLOW_SLIDE);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for (var _len3 = arguments.length, args = Array(_len3 &#x3e; 3 ? _len3 - 3 : 0), _key3 = 3; _key3 &#x3c; _len3; _key3++) {
+  args[_key3 - 3] = arguments[_key3];
+}
+
+var action = void 0,
+    channel = void 0;
+
+var yActionChannel = { done: false, value: actionChannel(pattern, buffers.<span class="apidocCodeKeywordSpan">sliding</span>(1)) };
+var yTake = function yTake() {
+  return { done: false, value: take(channel) };
+};
+var yFork = function yFork(ac) {
+  return { done: false, value: fork.apply(undefined, [worker].concat(args, [ac])) };
+};
+var yDelay = { done: false, value: call(delay, delayLength) };
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.effects" id="apidoc.module.redux-saga.effects">module redux-saga.effects</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.actionChannel" id="apidoc.element.redux-saga.effects.actionChannel">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>actionChannel
+        <span class="apidocSignatureSpan">(pattern, buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function actionChannel(pattern, buffer) {
+  (0, _utils.check)(pattern, _utils.is.notUndef, &#x27;actionChannel(pattern,...): argument pattern is undefined&#x27;);
+  if (arguments.length &#x3e; 1) {
+    (0, _utils.check)(buffer, _utils.is.notUndef, &#x27;actionChannel(pattern, buffer): argument buffer is undefined&#x27;);
+    (0, _utils.check)(buffer, _utils.is.buffer, &#x27;actionChannel(pattern, buffer): argument &#x27; + buffer + &#x27; is not a valid buffer&#x27;);
+  }
+  return effect(ACTION_CHANNEL, { pattern: pattern, buffer: buffer });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect)) ? runSelectEffect(data, currCb) :
+is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">actionChannel</span>(effect)) ? runChannelEffect(data, currCb) :
+is.notUndef(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.apply" id="apidoc.element.redux-saga.effects.apply">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>apply
+        <span class="apidocSignatureSpan">(context, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function apply(context, fn) {
+  var args = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : [];
+
+  return effect(CALL, getFnCallDesc(&#x27;apply&#x27;, { context: context, fn: fn }, args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (is.channel(patternOrChannel)) {
+    return effect(TAKE, { channel: patternOrChannel });
+  }
+  throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid
+ pattern&#x27;);
+}
+
+take.maybe = function () {
+  var eff = take.<span class="apidocCodeKeywordSpan">apply</span>(undefined, arguments);
+  eff[TAKE].maybe = true;
+  return eff;
+};
+
+export var takem = deprecate(take.maybe, deprecationWarning(&#x27;takem&#x27;, &#x27;take.maybe&#x27;));
+
+export function put(channel, action) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.call" id="apidoc.element.redux-saga.effects.call">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>call
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function call(fn) {
+  for (var _len = arguments.length, args = Array(_len &#x3e; 1 ? _len - 1 : 0), _key = 1; _key &#x3c; _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  return effect(CALL, getFnCallDesc(&#x27;call&#x27;, fn, args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+var _extends = Object.assign || function (target) { for (var i = 1; i &#x3c; arguments.length; i++) { var source = arguments[i];
+for (var key in source) { if (Object.prototype.hasOwnProperty.<span class="apidocCodeKeywordSpan">call</span>(source, key)) { target
+[key] = source[key]; } } } return target; };
+
+import { is, check, remove, MATCH, internalErr, SAGA_ACTION } from &#x27;./utils&#x27;;
+import { buffers } from &#x27;./buffers&#x27;;
+import { asap } from &#x27;./scheduler&#x27;;
+
+var CHANNEL_END_TYPE = &#x27;@@redux-saga/CHANNEL_END&#x27;;
+export var END = { type: CHANNEL_END_TYPE };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.cancel" id="apidoc.element.redux-saga.effects.cancel">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>cancel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cancel() {
+  for (var _len6 = arguments.length, tasks = Array(_len6), _key6 = 0; _key6 &#x3c; _len6; _key6++) {
+    tasks[_key6] = arguments[_key6];
+  }
+
+  if (tasks.length &#x3e; 1) {
+    return tasks.map(function (t) {
+      return cancel(t);
+    });
+  }
+  var task = tasks[0];
+  if (tasks.length === 1) {
+    (0, _utils.check)(task, _utils.is.notUndef, &#x27;cancel(task): argument task is undefined&#x27;);
+    (0, _utils.check)(task, _utils.is.task, &#x27;cancel(task): argument &#x27; + task + &#x27; is not a valid Task object &#x27; + TEST_HINT);
+  }
+  return effect(CANCEL, task || _utils.SELF_CANCELLATION);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function cancelAll() {
+  if (completed) {
+    return;
+  }
+  completed = true;
+  tasks.forEach(function (t) {
+    t.cont = noop;
+    t.<span class="apidocCodeKeywordSpan">cancel</span>();
+  });
+  tasks = [];
+}
+
+return {
+  addTask: addTask,
+  cancelAll: cancelAll,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.cancelled" id="apidoc.element.redux-saga.effects.cancelled">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>cancelled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cancelled() {
+  return effect(CANCELLED, {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect)) ? runSelectEffect(data, currCb) :
+is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef(data = asEffect.flush(effect)) ?
+runFlushEffect(data, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">cancelled</span>(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.cps" id="apidoc.element.redux-saga.effects.cps">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>cps
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cps(fn) {
+  for (var _len2 = arguments.length, args = Array(_len2 &#x3e; 1 ? _len2 - 1 : 0), _key2 = 1; _key2 &#x3c; _len2; _key2++) {
+    args[_key2 - 1] = arguments[_key2];
+  }
+
+  return effect(CPS, getFnCallDesc(&#x27;cps&#x27;, fn, args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">cps</span>(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data
+ = asEffect.fork(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data
+, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.flush" id="apidoc.element.redux-saga.effects.flush">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>flush
+        <span class="apidocSignatureSpan">(channel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function flush(channel) {
+  (0, _utils.check)(channel, _utils.is.channel, &#x27;flush(channel): argument &#x27; + channel + &#x27; is not valid channel&#x27;);
+  return effect(FLUSH, channel);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function flush(cb) {
+  checkForbiddenStates(); // TODO: check if some new state should be forbidden now
+  check(cb, is.func, &#x27;channel.flush\&#x27; callback must be a function&#x27;);
+  if (closed &#x26;&#x26; buffer.isEmpty()) {
+    cb(END);
+    return;
+  }
+  cb(buffer.<span class="apidocCodeKeywordSpan">flush</span>());
+}
+
+function close() {
+  checkForbiddenStates();
+  if (!closed) {
+    closed = true;
+    if (takers.length) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.fork" id="apidoc.element.redux-saga.effects.fork">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>fork
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fork(fn) {
+  for (var _len3 = arguments.length, args = Array(_len3 &#x3e; 1 ? _len3 - 1 : 0), _key3 = 1; _key3 &#x3c; _len3; _key3++) {
+    args[_key3 - 1] = arguments[_key3];
+  }
+
+  return effect(FORK, getFnCallDesc(&#x27;fork&#x27;, fn, args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan
+">fork</span>(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data,
+currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.join" id="apidoc.element.redux-saga.effects.join">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>join
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function join() {
+  for (var _len5 = arguments.length, tasks = Array(_len5), _key5 = 0; _key5 &#x3c; _len5; _key5++) {
+    tasks[_key5] = arguments[_key5];
+  }
+
+  if (tasks.length &#x3e; 1) {
+    return tasks.map(function (t) {
+      return join(t);
+    });
+  }
+  var task = tasks[0];
+  (0, _utils.check)(task, _utils.is.notUndef, &#x27;join(task): argument task is undefined&#x27;);
+  (0, _utils.check)(task, _utils.is.task, &#x27;join(task): argument &#x27; + task + &#x27; is not a valid Task object &#x27; + TEST_HINT);
+  return effect(JOIN, task);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">join</span>(effect)) ? runJoinEffect(
+data, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select
+(effect)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) :
+is.notUndef(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.put" id="apidoc.element.redux-saga.effects.put">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>put
+        <span class="apidocSignatureSpan">(channel, action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function put(channel, action) {
+  if (arguments.length &#x3e; 1) {
+    (0, _utils.check)(channel, _utils.is.notUndef, &#x27;put(channel, action): argument channel is undefined&#x27;);
+    (0, _utils.check)(channel, _utils.is.channel, &#x27;put(channel, action): argument &#x27; + channel + &#x27; is not a valid channel&#x27;);
+    (0, _utils.check)(action, _utils.is.notUndef, &#x27;put(channel, action): argument action is undefined&#x27;);
+  } else {
+    (0, _utils.check)(channel, _utils.is.notUndef, &#x27;put(action): argument action is undefined&#x27;);
+    action = channel;
+    channel = null;
+  }
+  return effect(PUT, { channel: channel, action: action });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  function put(input) {
+checkForbiddenStates();
+check(input, is.notUndef, UNDEFINED_INPUT_ERROR);
+if (closed) {
+  return;
+}
+if (!takers.length) {
+  return buffer.<span class="apidocCodeKeywordSpan">put</span>(input);
+}
+for (var i = 0; i &#x3c; takers.length; i++) {
+  var cb = takers[i];
+  if (!cb[MATCH] || cb[MATCH](input)) {
+    takers.splice(i, 1);
+    return cb(input);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.race" id="apidoc.element.redux-saga.effects.race">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>race
+        <span class="apidocSignatureSpan">(effects)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function race(effects) {
+  return effect(RACE, effects);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.<span class
+="apidocCodeKeywordSpan">race</span>(effect)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ?
+runCallEffect(data, effectId, currCb) : is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data
+ = asEffect.fork(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data
+, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.select" id="apidoc.element.redux-saga.effects.select">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>select
+        <span class="apidocSignatureSpan">(selector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function select(selector) {
+  for (var _len7 = arguments.length, args = Array(_len7 &#x3e; 1 ? _len7 - 1 : 0), _key7 = 1; _key7 &#x3c; _len7; _key7++) {
+    args[_key7 - 1] = arguments[_key7];
+  }
+
+  if (arguments.length === 0) {
+    selector = _utils.ident;
+  } else {
+    (0, _utils.check)(selector, _utils.is.notUndef, &#x27;select(selector,[...]): argument selector is undefined&#x27;);
+    (0, _utils.check)(selector, _utils.is.func, &#x27;select(selector,[...]): argument &#x27; + selector + &#x27; is not a function&#x27;);
+  }
+  return effect(SELECT, { selector: selector, args: args });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">select</span>(
+effect)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) :
+is.notUndef(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.spawn" id="apidoc.element.redux-saga.effects.spawn">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>spawn
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function spawn(fn) {
+  for (var _len4 = arguments.length, args = Array(_len4 &#x3e; 1 ? _len4 - 1 : 0), _key4 = 1; _key4 &#x3c; _len4; _key4++) {
+    args[_key4 - 1] = arguments[_key4];
+  }
+
+  var eff = fork.apply(undefined, [fn].concat(args));
+  eff[FORK].detached = true;
+  return eff;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.take" id="apidoc.element.redux-saga.effects.take">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>take
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function take() {
+  var patternOrChannel = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : &#x27;*&#x27;;
+
+  if (arguments.length) {
+    (0, _utils.check)(arguments[0], _utils.is.notUndef, &#x27;take(patternOrChannel): patternOrChannel is undefined&#x27;);
+  }
+  if (_utils.is.pattern(patternOrChannel)) {
+    return effect(TAKE, { pattern: patternOrChannel });
+  }
+  if (_utils.is.channel(patternOrChannel)) {
+    return effect(TAKE, { channel: patternOrChannel });
+  }
+  throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid pattern&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function take(cb) {
+  checkForbiddenStates();
+  check(cb, is.func, &#x27;channel.take\&#x27;s callback must be a function&#x27;);
+
+  if (closed &#x26;&#x26; buffer.isEmpty()) {
+    cb(END);
+  } else if (!buffer.isEmpty()) {
+    cb(buffer.<span class="apidocCodeKeywordSpan">take</span>());
+  } else {
+    takers.push(cb);
+    cb.cancel = function () {
+      return remove(takers, cb);
+    };
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.takeEvery" id="apidoc.element.redux-saga.effects.takeEvery">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>takeEvery
+        <span class="apidocSignatureSpan">(patternOrChannel, worker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function takeEvery(patternOrChannel, worker) {
+  for (var _len8 = arguments.length, args = Array(_len8 &#x3e; 2 ? _len8 - 2 : 0), _key8 = 2; _key8 &#x3c; _len8; _key8++) {
+    args[_key8 - 2] = arguments[_key8];
+  }
+
+  return fork.apply(undefined, [_sagaHelpers.takeEveryHelper, patternOrChannel, worker].concat(args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.takeLatest" id="apidoc.element.redux-saga.effects.takeLatest">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>takeLatest
+        <span class="apidocSignatureSpan">(patternOrChannel, worker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function takeLatest(patternOrChannel, worker) {
+  for (var _len9 = arguments.length, args = Array(_len9 &#x3e; 2 ? _len9 - 2 : 0), _key9 = 2; _key9 &#x3c; _len9; _key9++) {
+    args[_key9 - 2] = arguments[_key9];
+  }
+
+  return fork.apply(undefined, [_sagaHelpers.takeLatestHelper, patternOrChannel, worker].concat(args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.takem" id="apidoc.element.redux-saga.effects.takem">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>takem
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">takem = function () {
+  if (isDev) log(&#x27;warn&#x27;, deprecationWarning);
+  return fn.apply(undefined, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.throttle" id="apidoc.element.redux-saga.effects.throttle">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>throttle
+        <span class="apidocSignatureSpan">(ms, pattern, worker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function throttle(ms, pattern, worker) {
+  for (var _len10 = arguments.length, args = Array(_len10 &#x3e; 3 ? _len10 - 3 : 0), _key10 = 3; _key10 &#x3c; _len10; _key10++) {
+    args[_key10 - 3] = arguments[_key10];
+  }
+
+  return fork.apply(undefined, [_sagaHelpers.throttleHelper, ms, pattern, worker].concat(args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.effects.put" id="apidoc.module.redux-saga.effects.put">module redux-saga.effects.put</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.put.put" id="apidoc.element.redux-saga.effects.put.put">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>put
+        <span class="apidocSignatureSpan">(channel, action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function put(channel, action) {
+  if (arguments.length &#x3e; 1) {
+    (0, _utils.check)(channel, _utils.is.notUndef, &#x27;put(channel, action): argument channel is undefined&#x27;);
+    (0, _utils.check)(channel, _utils.is.channel, &#x27;put(channel, action): argument &#x27; + channel + &#x27; is not a valid channel&#x27;);
+    (0, _utils.check)(action, _utils.is.notUndef, &#x27;put(channel, action): argument action is undefined&#x27;);
+  } else {
+    (0, _utils.check)(channel, _utils.is.notUndef, &#x27;put(action): argument action is undefined&#x27;);
+    action = channel;
+    channel = null;
+  }
+  return effect(PUT, { channel: channel, action: action });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  function put(input) {
+checkForbiddenStates();
+check(input, is.notUndef, UNDEFINED_INPUT_ERROR);
+if (closed) {
+  return;
+}
+if (!takers.length) {
+  return buffer.<span class="apidocCodeKeywordSpan">put</span>(input);
+}
+for (var i = 0; i &#x3c; takers.length; i++) {
+  var cb = takers[i];
+  if (!cb[MATCH] || cb[MATCH](input)) {
+    takers.splice(i, 1);
+    return cb(input);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.put.resolve" id="apidoc.element.redux-saga.effects.put.resolve">
+        function <span class="apidocSignatureSpan">redux-saga.effects.put.</span>resolve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function () {
+  var eff = put.apply(undefined, arguments);
+  eff[PUT].resolve = true;
+  return eff;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iterator._isRunning = false;
+stdChannel.close();
+if (!isErr) {
+  if (result === TASK_CANCEL &#x26;&#x26; isDev) {
+    log(&#x27;info&#x27;, name + &#x27; has been cancelled&#x27;, &#x27;&#x27;);
+  }
+  iterator._result = result;
+  iterator._deferredEnd &#x26;&#x26; iterator._deferredEnd.<span class="apidocCodeKeywordSpan">resolve</span>(result);
+} else {
+  if (result instanceof Error) {
+    result.sagaStack = &#x27;at &#x27; + name + &#x27; \n &#x27; + (result.sagaStack || result.stack);
+  }
+  if (!task.cont) {
+    log(&#x27;error&#x27;, &#x27;uncaught&#x27;, result.sagaStack || result.stack);
+    if (result instanceof Error &#x26;&#x26; onError) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.put.sync" id="apidoc.element.redux-saga.effects.put.sync">
+        function <span class="apidocSignatureSpan">redux-saga.effects.put.</span>sync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function () {
+  if (isDev) log(&#x27;warn&#x27;, deprecationWarning);
+  return fn.apply(undefined, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.effects.take" id="apidoc.module.redux-saga.effects.take">module redux-saga.effects.take</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.take.take" id="apidoc.element.redux-saga.effects.take.take">
+        function <span class="apidocSignatureSpan">redux-saga.effects.</span>take
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function take() {
+  var patternOrChannel = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : &#x27;*&#x27;;
+
+  if (arguments.length) {
+    (0, _utils.check)(arguments[0], _utils.is.notUndef, &#x27;take(patternOrChannel): patternOrChannel is undefined&#x27;);
+  }
+  if (_utils.is.pattern(patternOrChannel)) {
+    return effect(TAKE, { pattern: patternOrChannel });
+  }
+  if (_utils.is.channel(patternOrChannel)) {
+    return effect(TAKE, { channel: patternOrChannel });
+  }
+  throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid pattern&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function take(cb) {
+  checkForbiddenStates();
+  check(cb, is.func, &#x27;channel.take\&#x27;s callback must be a function&#x27;);
+
+  if (closed &#x26;&#x26; buffer.isEmpty()) {
+    cb(END);
+  } else if (!buffer.isEmpty()) {
+    cb(buffer.<span class="apidocCodeKeywordSpan">take</span>());
+  } else {
+    takers.push(cb);
+    cb.cancel = function () {
+      return remove(takers, cb);
+    };
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.effects.take.maybe" id="apidoc.element.redux-saga.effects.take.maybe">
+        function <span class="apidocSignatureSpan">redux-saga.effects.take.</span>maybe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maybe = function () {
+  var eff = take.apply(undefined, arguments);
+  eff[TAKE].maybe = true;
+  return eff;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.utils" id="apidoc.module.redux-saga.utils">module redux-saga.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.arrayOfDeffered" id="apidoc.element.redux-saga.utils.arrayOfDeffered">
+        function <span class="apidocSignatureSpan">redux-saga.utils.</span>arrayOfDeffered
+        <span class="apidocSignatureSpan">(length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function arrayOfDeffered(length) {
+  var arr = [];
+  for (var i = 0; i &#x3c; length; i++) {
+    arr.push(deferred());
+  }
+  return arr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.createMockTask" id="apidoc.element.redux-saga.utils.createMockTask">
+        function <span class="apidocSignatureSpan">redux-saga.utils.</span>createMockTask
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createMockTask() {
+  var _ref;
+
+  var running = true;
+  var _result = void 0,
+      _error = void 0;
+
+  return _ref = {}, _defineProperty(_ref, TASK, true), _defineProperty(_ref, &#x27;isRunning&#x27;, function isRunning() {
+    return running;
+  }), _defineProperty(_ref, &#x27;result&#x27;, function result() {
+    return _result;
+  }), _defineProperty(_ref, &#x27;error&#x27;, function error() {
+    return _error;
+  }), _defineProperty(_ref, &#x27;setRunning&#x27;, function setRunning(b) {
+    return running = b;
+  }), _defineProperty(_ref, &#x27;setResult&#x27;, function setResult(r) {
+    return _result = r;
+  }), _defineProperty(_ref, &#x27;setError&#x27;, function setError(e) {
+    return _error = e;
+  }), _ref;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.deferred" id="apidoc.element.redux-saga.utils.deferred">
+        function <span class="apidocSignatureSpan">redux-saga.utils.</span>deferred
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deferred() {
+  var props = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : {};
+
+  var def = _extends({}, props);
+  var promise = new Promise(function (resolve, reject) {
+    def.resolve = resolve;
+    def.reject = reject;
+  });
+  def.promise = promise;
+  return def;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.noop" id="apidoc.element.redux-saga.utils.noop">
+        function <span class="apidocSignatureSpan">redux-saga.utils.</span>noop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noop() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.utils.CHANNEL_END" id="apidoc.module.redux-saga.utils.CHANNEL_END">module redux-saga.utils.CHANNEL_END</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.CHANNEL_END.toString" id="apidoc.element.redux-saga.utils.CHANNEL_END.toString">
+        function <span class="apidocSignatureSpan">redux-saga.utils.CHANNEL_END.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() {
+  return &#x27;@@redux-saga/CHANNEL_END&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.utils.asEffect" id="apidoc.module.redux-saga.utils.asEffect">module redux-saga.utils.asEffect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.actionChannel" id="apidoc.element.redux-saga.utils.asEffect.actionChannel">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>actionChannel
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">actionChannel = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect)) ? runSelectEffect(data, currCb) :
+is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">actionChannel</span>(effect)) ? runChannelEffect(data, currCb) :
+is.notUndef(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.call" id="apidoc.element.redux-saga.utils.asEffect.call">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>call
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">call = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+var _extends = Object.assign || function (target) { for (var i = 1; i &#x3c; arguments.length; i++) { var source = arguments[i];
+for (var key in source) { if (Object.prototype.hasOwnProperty.<span class="apidocCodeKeywordSpan">call</span>(source, key)) { target
+[key] = source[key]; } } } return target; };
+
+import { is, check, remove, MATCH, internalErr, SAGA_ACTION } from &#x27;./utils&#x27;;
+import { buffers } from &#x27;./buffers&#x27;;
+import { asap } from &#x27;./scheduler&#x27;;
+
+var CHANNEL_END_TYPE = &#x27;@@redux-saga/CHANNEL_END&#x27;;
+export var END = { type: CHANNEL_END_TYPE };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.cancel" id="apidoc.element.redux-saga.utils.asEffect.cancel">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>cancel
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancel = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function cancelAll() {
+  if (completed) {
+    return;
+  }
+  completed = true;
+  tasks.forEach(function (t) {
+    t.cont = noop;
+    t.<span class="apidocCodeKeywordSpan">cancel</span>();
+  });
+  tasks = [];
+}
+
+return {
+  addTask: addTask,
+  cancelAll: cancelAll,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.cancelled" id="apidoc.element.redux-saga.utils.asEffect.cancelled">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>cancelled
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancelled = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect)) ? runSelectEffect(data, currCb) :
+is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef(data = asEffect.flush(effect)) ?
+runFlushEffect(data, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">cancelled</span>(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.cps" id="apidoc.element.redux-saga.utils.asEffect.cps">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>cps
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cps = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">cps</span>(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data
+ = asEffect.fork(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data
+, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.flush" id="apidoc.element.redux-saga.utils.asEffect.flush">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>flush
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function flush(cb) {
+  checkForbiddenStates(); // TODO: check if some new state should be forbidden now
+  check(cb, is.func, &#x27;channel.flush\&#x27; callback must be a function&#x27;);
+  if (closed &#x26;&#x26; buffer.isEmpty()) {
+    cb(END);
+    return;
+  }
+  cb(buffer.<span class="apidocCodeKeywordSpan">flush</span>());
+}
+
+function close() {
+  checkForbiddenStates();
+  if (!closed) {
+    closed = true;
+    if (takers.length) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.fork" id="apidoc.element.redux-saga.utils.asEffect.fork">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>fork
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fork = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan
+">fork</span>(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data,
+currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.join" id="apidoc.element.redux-saga.utils.asEffect.join">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>join
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">join</span>(effect)) ? runJoinEffect(
+data, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select
+(effect)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) :
+is.notUndef(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.put" id="apidoc.element.redux-saga.utils.asEffect.put">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>put
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  function put(input) {
+checkForbiddenStates();
+check(input, is.notUndef, UNDEFINED_INPUT_ERROR);
+if (closed) {
+  return;
+}
+if (!takers.length) {
+  return buffer.<span class="apidocCodeKeywordSpan">put</span>(input);
+}
+for (var i = 0; i &#x3c; takers.length; i++) {
+  var cb = takers[i];
+  if (!cb[MATCH] || cb[MATCH](input)) {
+    takers.splice(i, 1);
+    return cb(input);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.race" id="apidoc.element.redux-saga.utils.asEffect.race">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>race
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">race = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.<span class
+="apidocCodeKeywordSpan">race</span>(effect)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ?
+runCallEffect(data, effectId, currCb) : is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data
+ = asEffect.fork(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data
+, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.select" id="apidoc.element.redux-saga.utils.asEffect.select">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>select
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">select = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.<span class="apidocCodeKeywordSpan">select</span>(
+effect)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) :
+is.notUndef(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.asEffect.take" id="apidoc.element.redux-saga.utils.asEffect.take">
+        function <span class="apidocSignatureSpan">redux-saga.utils.asEffect.</span>take
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">take = function (effect) {
+  return effect &#x26;&#x26; effect[IO] &#x26;&#x26; effect[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function take(cb) {
+  checkForbiddenStates();
+  check(cb, is.func, &#x27;channel.take\&#x27;s callback must be a function&#x27;);
+
+  if (closed &#x26;&#x26; buffer.isEmpty()) {
+    cb(END);
+  } else if (!buffer.isEmpty()) {
+    cb(buffer.<span class="apidocCodeKeywordSpan">take</span>());
+  } else {
+    takers.push(cb);
+    cb.cancel = function () {
+      return remove(takers, cb);
+    };
+  }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-saga.utils.is" id="apidoc.module.redux-saga.utils.is">module redux-saga.utils.is</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.array" id="apidoc.element.redux-saga.utils.is.array">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>array
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return effect(RACE, effects);
+}
+
+function getFnCallDesc(meth, fn, args) {
+check(fn, is.notUndef, meth + &#x27;: argument fn is undefined&#x27;);
+
+var context = null;
+if (is.<span class="apidocCodeKeywordSpan">array</span>(fn)) {
+  var _fn = fn;
+
+  var _fn2 = _slicedToArray(_fn, 2);
+
+  context = _fn2[0];
+  fn = _fn2[1];
+} else if (fn.fn) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.buffer" id="apidoc.element.redux-saga.utils.is.buffer">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>buffer
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function buffer(buf) {
+  return buf &#x26;&#x26; is.func(buf.isEmpty) &#x26;&#x26; is.func(buf.take) &#x26;&#x26; is.func(buf.put);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.channel" id="apidoc.element.redux-saga.utils.is.channel">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>channel
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function channel(ch) {
+  return ch &#x26;&#x26; is.func(ch.take) &#x26;&#x26; is.func(ch.close);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (arguments.length) {
+  check(arguments[0], is.notUndef, &#x27;take(patternOrChannel): patternOrChannel is undefined&#x27;);
+}
+if (is.pattern(patternOrChannel)) {
+  return effect(TAKE, { pattern: patternOrChannel });
+}
+if (is.<span class="apidocCodeKeywordSpan">channel</span>(patternOrChannel)) {
+  return effect(TAKE, { channel: patternOrChannel });
+}
+throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid
+ pattern&#x27;);
+}
+
+take.maybe = function () {
+var eff = take.apply(undefined, arguments);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.func" id="apidoc.element.redux-saga.utils.is.func">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>func
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function func(f) {
+  return typeof f === &#x27;function&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  if (matcher &#x26;&#x26; !matcher(input)) {
+    return;
+  }
+  chan.put(input);
+});
+
+if (!is.<span class="apidocCodeKeywordSpan">func</span>(unsubscribe)) {
+  throw new Error(&#x27;in eventChannel: subscribe should return a function to unsubscribe&#x27;);
+}
+
+return {
+  take: chan.take,
+  flush: chan.flush,
+  close: function close() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.helper" id="apidoc.element.redux-saga.utils.is.helper">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>helper
+        <span class="apidocSignatureSpan">(it)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function helper(it) {
+  return it &#x26;&#x26; it[HELPER];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     Library users can attach their own cancellation logic to promises by defining a
+    promise[CANCEL] method in their returned promises
+    ATTENTION! calling cancel must have no effect on an already completed or cancelled effect
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.<span class="apidocCodeKeywordSpan">helper</span>(effect) ? runForkEffect
+(wrapHelper(effect), effectId, currCb) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect)) ? runSelectEffect(data, currCb) :
+is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef(data = asEffect.flush(effect)) ?
+runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect(data, currCb) : /* anything else
+ returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.iterable" id="apidoc.element.redux-saga.utils.is.iterable">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>iterable
+        <span class="apidocSignatureSpan">(it)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function iterable(it) {
+  return it &#x26;&#x26; is.func(Symbol) ? is.func(it[Symbol.iterator]) : is.array(it);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.iterator" id="apidoc.element.redux-saga.utils.is.iterator">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>iterator
+        <span class="apidocSignatureSpan">(it)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function iterator(it) {
+  return it &#x26;&#x26; is.func(it.next) &#x26;&#x26; is.func(it.throw);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function createTaskIterator(_ref) {
+var context = _ref.context,
+    fn = _ref.fn,
+    args = _ref.args;
+
+if (is.<span class="apidocCodeKeywordSpan">iterator</span>(fn)) {
+  return fn;
+}
+
+// catch synchronous failures; see #152 and #441
+var result = void 0,
+    error = void 0;
+try {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.notUndef" id="apidoc.element.redux-saga.utils.is.notUndef">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>notUndef
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notUndef(v) {
+  return v !== null &#x26;&#x26; v !== undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.promise(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect(wrapHelper(effect), effectId, currCb
+) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.<span class="apidocCodeKeywordSpan">notUndef</span>(data
+ = asEffect.take(effect)) ? runTakeEffect(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) :
+is.notUndef(data = asEffect.race(effect)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ?
+runCallEffect(data, effectId, currCb) : is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data
+ = asEffect.fork(effect)) ? runForkEffect(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data
+, currCb) : is.notUndef(data = asEffect.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect
+)) ? runSelectEffect(data, currCb) : is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef
+(data = asEffect.flush(effect)) ? runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect
+(data, currCb) : /* anything else returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+  var cancelPromise = promise[CANCEL];
+  if (typeof cancelPromise === &#x27;function&#x27;) {
+    cb.cancel = cancelPromise;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.number" id="apidoc.element.redux-saga.utils.is.number">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>number
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function number(n) {
+  return typeof n === &#x27;number&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.observable" id="apidoc.element.redux-saga.utils.is.observable">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>observable
+        <span class="apidocSignatureSpan">(ob)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function observable(ob) {
+  return ob &#x26;&#x26; is.func(ob.subscribe);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.pattern" id="apidoc.element.redux-saga.utils.is.pattern">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>pattern
+        <span class="apidocSignatureSpan">(pat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pattern(pat) {
+  return pat &#x26;&#x26; (typeof pat === &#x27;string&#x27; || (typeof pat === &#x27;undefined&#x27; ? &#x27;undefined&#x27; : _typeof(pat)) === &#x27;symbol&#x27; || is.func(pat
+) || is.array(pat));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+export function take() {
+  var patternOrChannel = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : &#x27;*&#x27;;
+
+  if (arguments.length) {
+    check(arguments[0], is.notUndef, &#x27;take(patternOrChannel): patternOrChannel is undefined&#x27;);
+  }
+  if (is.<span class="apidocCodeKeywordSpan">pattern</span>(patternOrChannel)) {
+    return effect(TAKE, { pattern: patternOrChannel });
+  }
+  if (is.channel(patternOrChannel)) {
+    return effect(TAKE, { channel: patternOrChannel });
+  }
+  throw new Error(&#x27;take(patternOrChannel): argument &#x27; + String(patternOrChannel) + &#x27; is not valid channel or a valid
+ pattern&#x27;);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.promise" id="apidoc.element.redux-saga.utils.is.promise">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>promise
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promise(p) {
+  return p &#x26;&#x26; is.func(p.then);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     Library users can attach their own cancellation logic to promises by defining a
+    promise[CANCEL] method in their returned promises
+    ATTENTION! calling cancel must have no effect on an already completed or cancelled effect
+  **/
+  var data = void 0;
+  return (
+    // Non declarative effect
+    is.<span class="apidocCodeKeywordSpan">promise</span>(effect) ? resolvePromise(effect, currCb) : is.helper(effect) ? runForkEffect
+(wrapHelper(effect), effectId, currCb) : is.iterator(effect) ? resolveIterator(effect, effectId, name, currCb)
+
+    // declarative effects
+    : is.array(effect) ? runParallelEffect(effect, effectId, currCb) : is.notUndef(data = asEffect.take(effect)) ? runTakeEffect
+(data, currCb) : is.notUndef(data = asEffect.put(effect)) ? runPutEffect(data, currCb) : is.notUndef(data = asEffect.race(effect
+)) ? runRaceEffect(data, effectId, currCb) : is.notUndef(data = asEffect.call(effect)) ? runCallEffect(data, effectId, currCb) :
+is.notUndef(data = asEffect.cps(effect)) ? runCPSEffect(data, currCb) : is.notUndef(data = asEffect.fork(effect)) ? runForkEffect
+(data, effectId, currCb) : is.notUndef(data = asEffect.join(effect)) ? runJoinEffect(data, currCb) : is.notUndef(data = asEffect
+.cancel(effect)) ? runCancelEffect(data, currCb) : is.notUndef(data = asEffect.select(effect)) ? runSelectEffect(data, currCb) :
+is.notUndef(data = asEffect.actionChannel(effect)) ? runChannelEffect(data, currCb) : is.notUndef(data = asEffect.flush(effect)) ?
+runFlushEffect(data, currCb) : is.notUndef(data = asEffect.cancelled(effect)) ? runCancelledEffect(data, currCb) : /* anything else
+ returned as is        */currCb(effect)
+  );
+}
+
+function resolvePromise(promise, cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.stringableFunc" id="apidoc.element.redux-saga.utils.is.stringableFunc">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>stringableFunc
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stringableFunc(f) {
+  return is.func(f) &#x26;&#x26; hasOwn(f, &#x27;toString&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return function (input) {
+    return _predicate(input);
+  };
+}
+};
+
+function matcher(pattern) {
+return (pattern === &#x27;*&#x27; ? matchers.wildcard : is.array(pattern) ? matchers.array : is.<span class="apidocCodeKeywordSpan
+">stringableFunc</span>(pattern) ? matchers.default : is.func(pattern) ? matchers.predicate : matchers.default)(pattern);
+}
+
+/**
+Used to track a parent task and its forks
+In the new fork model, forked tasks are attached by default to their parent
+We model this using the concept of Parent task &#x26;&#x26; main Task
+main task is the main flow of the current Generator, the parent tasks is the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.task" id="apidoc.element.redux-saga.utils.is.task">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>task
+        <span class="apidocSignatureSpan">(t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function task(t) {
+  return t &#x26;&#x26; t[TASK];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-saga.utils.is.undef" id="apidoc.element.redux-saga.utils.is.undef">
+        function <span class="apidocSignatureSpan">redux-saga.utils.is.</span>undef
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function undef(v) {
+  return v === null || v === undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// CPS (ie node style functions) can define their own cancellation logic
+// by setting cancel field on the cb
+
+// catch synchronous failures; see #152
+try {
+  var cpsCb = function cpsCb(err, res) {
+    return is.<span class="apidocCodeKeywordSpan">undef</span>(err) ? cb(res) : cb(err, true);
+  };
+  fn.apply(context, args.concat(cpsCb));
+  if (cpsCb.cancel) {
+    cb.cancel = function () {
+      return cpsCb.cancel();
+    };
+  }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

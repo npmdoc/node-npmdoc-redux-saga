@@ -1,0 +1,62 @@
+<svg height="942" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="942" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-20 17:34:11 +0000   436715 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-20 17:34:11 +0000     1083 bytes  LICENSE</tspan>
+<tspan x="10" y="58">  2.  2017-04-20 17:34:11 +0000    17158 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-20 17:34:11 +0000     8412 bytes  README_ja.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-20 17:34:11 +0000     8334 bytes  README_ko.md</tspan>
+<tspan x="10" y="106">  5.  2017-04-20 17:34:11 +0000    20524 bytes  README_ru.md</tspan>
+<tspan x="10" y="122">  6.  2017-04-20 17:34:11 +0000    27849 bytes  README_zh-cn.md</tspan>
+<tspan x="10" y="138">  7.  2017-04-20 17:34:11 +0000    27929 bytes  README_zh-hant.md</tspan>
+<tspan x="10" y="154">  8.  2017-04-20 17:34:11 +0000    72601 bytes  dist/redux-saga.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-20 17:34:11 +0000    31251 bytes  dist/redux-saga.min.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-20 17:34:11 +0000     8369 bytes  effects.d.ts</tspan>
+<tspan x="10" y="202"> 11.  2017-04-20 17:34:11 +0000      154 bytes  effects/package.json</tspan>
+<tspan x="10" y="218"> 12.  2017-04-20 17:34:11 +0000      174 bytes  es/effects.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-20 17:34:11 +0000      457 bytes  es/index.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-20 17:34:11 +0000     2309 bytes  es/internal/buffers.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-20 17:34:11 +0000     4874 bytes  es/internal/channel.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-20 17:34:11 +0000     8939 bytes  es/internal/io.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-20 17:34:11 +0000     4111 bytes  es/internal/middleware.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-20 17:34:11 +0000    23376 bytes  es/internal/proc.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-20 17:34:11 +0000      866 bytes  es/internal/runSaga.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-20 17:34:11 +0000     5704 bytes  es/internal/sagaHelpers.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-20 17:34:11 +0000     1327 bytes  es/internal/scheduler.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-20 17:34:11 +0000     6689 bytes  es/internal/utils.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-20 17:34:11 +0000      195 bytes  es/utils.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-20 17:34:11 +0000     5478 bytes  index.d.ts</tspan>
+<tspan x="10" y="426"> 25.  2017-04-20 17:34:11 +0000     2239 bytes  lib/effects.js</tspan>
+<tspan x="10" y="442"> 26.  2017-04-20 17:34:11 +0000     2557 bytes  lib/index.js</tspan>
+<tspan x="10" y="458"> 27.  2017-04-20 17:34:11 +0000     2490 bytes  lib/internal/buffers.js</tspan>
+<tspan x="10" y="474"> 28.  2017-04-20 17:34:11 +0000     5434 bytes  lib/internal/channel.js</tspan>
+<tspan x="10" y="490"> 29.  2017-04-20 17:34:11 +0000     9744 bytes  lib/internal/io.js</tspan>
+<tspan x="10" y="506"> 30.  2017-04-20 17:34:11 +0000     4447 bytes  lib/internal/middleware.js</tspan>
+<tspan x="10" y="522"> 31.  2017-04-20 17:34:11 +0000    23998 bytes  lib/internal/proc.js</tspan>
+<tspan x="10" y="538"> 32.  2017-04-20 17:34:11 +0000     1124 bytes  lib/internal/runSaga.js</tspan>
+<tspan x="10" y="554"> 33.  2017-04-20 17:34:11 +0000     6109 bytes  lib/internal/sagaHelpers.js</tspan>
+<tspan x="10" y="570"> 34.  2017-04-20 17:34:11 +0000     1457 bytes  lib/internal/scheduler.js</tspan>
+<tspan x="10" y="586"> 35.  2017-04-20 17:34:11 +0000     7217 bytes  lib/internal/utils.js</tspan>
+<tspan x="10" y="602"> 36.  2017-04-20 17:34:11 +0000     1334 bytes  lib/utils.js</tspan>
+<tspan x="10" y="618"> 37.  2017-04-20 17:34:11 +0000     3673 bytes  package.json</tspan>
+<tspan x="10" y="634"> 38.  2017-04-20 17:34:11 +0000      174 bytes  src/effects.js</tspan>
+<tspan x="10" y="650"> 39.  2017-04-20 17:34:11 +0000      448 bytes  src/index.js</tspan>
+<tspan x="10" y="666"> 40.  2017-04-20 17:34:11 +0000     1927 bytes  src/internal/buffers.js</tspan>
+<tspan x="10" y="682"> 41.  2017-04-20 17:34:11 +0000     4110 bytes  src/internal/channel.js</tspan>
+<tspan x="10" y="698"> 42.  2017-04-20 17:34:11 +0000    27302 bytes  src/internal/channels-trans-table.png</tspan>
+<tspan x="10" y="714"> 43.  2017-04-20 17:34:11 +0000     5984 bytes  src/internal/io.js</tspan>
+<tspan x="10" y="730"> 44.  2017-04-20 17:34:11 +0000     3524 bytes  src/internal/middleware.js</tspan>
+<tspan x="10" y="746"> 45.  2017-04-20 17:34:11 +0000    19835 bytes  src/internal/proc.js</tspan>
+<tspan x="10" y="762"> 46.  2017-04-20 17:34:11 +0000      742 bytes  src/internal/runSaga.js</tspan>
+<tspan x="10" y="778"> 47.  2017-04-20 17:34:11 +0000     3571 bytes  src/internal/sagaHelpers.js</tspan>
+<tspan x="10" y="794"> 48.  2017-04-20 17:34:11 +0000     1308 bytes  src/internal/scheduler.js</tspan>
+<tspan x="10" y="810"> 49.  2017-04-20 17:34:11 +0000     4306 bytes  src/internal/utils.js</tspan>
+<tspan x="10" y="826"> 50.  2017-04-20 17:34:11 +0000      193 bytes  src/utils.js</tspan>
+<tspan x="10" y="842"> 51.  2017-04-20 17:34:11 +0000      448 bytes  types.d.ts</tspan>
+<tspan x="10" y="858"> 52.  2017-04-20 17:34:11 +0000     1647 bytes  utils.d.ts</tspan>
+<tspan x="10" y="874"> 53.  2017-04-20 17:34:11 +0000      146 bytes  utils/package.json</tspan>
+<tspan x="10" y="890"> 54.  2017-04-20 17:34:11 +0000      294 bytes  webpack.config.base.js</tspan>
+<tspan x="10" y="906"> 55.  2017-04-20 17:34:11 +0000      328 bytes  webpack.config.dev.js</tspan>
+<tspan x="10" y="922"> 56.  2017-04-20 17:34:11 +0000      442 bytes  webpack.config.prod.js</tspan>
+</text>
+</svg>
